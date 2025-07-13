@@ -1,0 +1,129 @@
+{
+    "realm": "reports-realm",
+    "enabled": true,
+    "roles": {
+      "realm": [
+        {
+          "name": "user",
+          "description": "Regular user role"
+        },
+        {
+          "name": "administrator",
+          "description": "Administrator role"
+        },
+        {
+          "name": "report_user",
+          "description": "User role with report access"
+        }
+      ]
+    },
+    "users": [
+      {
+        "username": "regular1",
+        "enabled": true,
+        "email": "regular1@example.com",
+        "firstName": "Regular",
+        "lastName": "One",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "userpass1",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["user"]
+      },
+      {
+        "username": "regular2",
+        "enabled": true,
+        "email": "regular2@example.com",
+        "firstName": "Regular",
+        "lastName": "Two",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "userpass2",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["user"]
+      },
+      {
+        "username": "superadmin1",
+        "enabled": true,
+        "email": "superadmin1@example.com",
+        "firstName": "Super",
+        "lastName": "Admin",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "adminpass1",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["administrator"]
+      },
+      {
+        "username": "access1",
+        "enabled": true,
+        "email": "access1@example.com",
+        "firstName": "Access",
+        "lastName": "One",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "accesspass1",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["report_user"]
+      },
+      {
+        "username": "access2",
+        "enabled": true,
+        "email": "access2@example.com",
+        "firstName": "Access",
+        "lastName": "Two",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "accesspass2",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["report_user"]
+      },
+      {
+        "username": "access3",
+        "enabled": true,
+        "email": "access3@example.com",
+        "firstName": "Access",
+        "lastName": "Three",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "accesspass3",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["report_user"]
+      }
+    ],
+    "clients": [
+      {
+        "clientId": "reports-frontend",
+        "enabled": true,
+        "publicClient": true,
+        "redirectUris": ["http://localhost:3000/*"],
+        "webOrigins": ["http://localhost:3000"],
+        "directAccessGrantsEnabled": true
+      },
+      {
+        "clientId": "reports-api",
+        "enabled": true,
+        "clientAuthenticatorType": "client-secret",
+        "secret": "oNwoLQdvJAvRcL89SydqCWCe5ry1jMgq", 
+        "bearerOnly": true
+      }
+    ]
+  }
